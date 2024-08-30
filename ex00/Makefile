@@ -1,7 +1,7 @@
 SRCS = $(wildcard *.cpp)
 HPP = $(wildcard *.hpp)
 OBJS = $(SRCS:.cpp=.o)
-EXEC = ex00
+EXEC = ScalarConverter
 
 ANSI_RESET   = \x1b[0m
 ANSI_RED     = \x1b[31m
