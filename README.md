@@ -85,3 +85,10 @@ Derived* derivedPtr = static_cast<Derived*>(basePtr);  // Conversion de Base* à
 ## Conclusion
 
 `static_cast` est un outil puissant et sûr pour effectuer des conversions de type connues à la compilation. Il est recommandé de l'utiliser lorsque les types sont connus et compatibles et qu'il n'est pas nécessaire de vérifier la sécurité de la conversion à l'exécution.
+| Type de Cast       | Description                                                                                 | Vérification à la Compilation | Vérification à l'Exécution | Utilisation Principale                                                        |
+|--------------------|---------------------------------------------------------------------------------------------|-------------------------------|----------------------------|-------------------------------------------------------------------------------|
+| **`static_cast`**  | Conversion de type entre types compatibles. Vérifié à la compilation.                      | Oui                           | Non                        | Conversions numériques, conversions entre types de pointeurs compatibles, conversions explicites entre classes. |
+| **`dynamic_cast`** | Conversion de type avec vérification à l'exécution. Utilisé principalement pour le polymorphisme. | Oui                           | Oui                        | Conversion entre types de base et dérivé dans le contexte du polymorphisme (requiert RTTI). |
+| **`const_cast`**   | Ajoute ou retire la constance ou la volatilité d'un type.                                  | Oui                           | Non                        | Modification des attributs `const` ou `volatile` d'un objet.                 |
+| **`reinterpret_cast`** | Conversion entre types de données qui n'ont pas nécessairement de relation entre eux.     | Non                           | Non                        | Conversion bas niveau, comme la manipulation directe de bits ou d'adresses.  |
+
