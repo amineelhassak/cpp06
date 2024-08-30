@@ -85,10 +85,9 @@ Derived* derivedPtr = static_cast<Derived*>(basePtr);  // Conversion de Base* à
 ## Conclusion
 
 `static_cast` est un outil puissant et sûr pour effectuer des conversions de type connues à la compilation. Il est recommandé de l'utiliser lorsque les types sont connus et compatibles et qu'il n'est pas nécessaire de vérifier la sécurité de la conversion à l'exécution.
-### Caractéristiques de `static_cast`
-
-- **Vérification à la compilation** : `static_cast` est vérifié à la compilation, ce qui le rend plus sûr que `reinterpret_cast`. Si la conversion est illégale, le compilateur générera une erreur.
-
-- **Pas de vérification à l'exécution** : Contrairement à `dynamic_cast`, `static_cast` ne fait pas de vérification à l'exécution. Cela signifie que si vous utilisez `static_cast` pour convertir un type de base en type dérivé de manière incorrecte, le résultat peut être imprévisible.
-
-- **Utilisable avec les types de base et les types dérivés** : `static_cast` peut être utilisé pour effectuer des conversions ascendantes (upcast) et descendantes (downcast) entre types de base et types dérivés. Cependant, il est de la responsabilité du programmeur de s'assurer que la conversion descendante (downcast) est sûre.
+| Type de Cast       | Description                                                                                 | Vérification à la Compilation | Vérification à l'Exécution | Utilisation Principale                                                        |
+|--------------------|---------------------------------------------------------------------------------------------|-------------------------------|----------------------------|-------------------------------------------------------------------------------|
+| **`static_cast`**  | Conversion de type entre types compatibles. Vérifié à la compilation.                      | Oui                           | Non                        | Conversions numériques, conversions entre types de pointeurs compatibles, conversions explicites entre classes. |
+| **`dynamic_cast`** | Conversion de type avec vérification à l'exécution. Utilisé principalement pour le polymorphisme. | Oui                           | Oui                        | Conversion entre types de base et dérivé dans le contexte du polymorphisme (requiert RTTI). |
+| **`const_cast`**   | Ajoute ou retire la constance ou la volatilité d'un type.                                  | Oui                           | Non                        | Modification des attributs `const` ou `volatile` d'un objet.                 |
+| **`reinterpret_cast`** | Conversion entre types de données qui n'ont pas nécessairement de relation entre eux.     | Non                           | Non                        | Conversion bas niveau, comme la manipulation directe de bits ou d'adresses.  |
