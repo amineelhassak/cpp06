@@ -1,7 +1,13 @@
 #include "ScalarConverter.hpp"
 
+// void l()
+// {
+//     system("leaks ScalarConverter");
+// }
+
 int main(int ac,char **av)
 {
+    // atexit(l);
     if (ac != 2)
     {
         std::cout << "Error: invalid" << std::endl;
